@@ -31,16 +31,16 @@ router.post("/add", async (req, res) => {
 });
 
 // /posts/:id
-router.get("/:id", async (req, res) => {
-  try {
-    const getPostEntry = await postEntry.findById(req.params.id);
-    res.json(getPostEntry);
-  } catch (error) {
-    console.log(req.params);
-    console.log("this is from router get / : id");
-    next(error);
-  }
-});
+  router.get("/:id", async (req, res) => {
+    try {
+      const getPostEntry = await postEntry.findById(req.params.id);
+      res.json(getPostEntry);
+    } catch (error) {
+      console.log(req.params);
+      console.log("this is from router get / : id");
+      next(error);
+    }
+  });
 
 // /posts/:id
 router.delete("/:id", async (req, res) => {
